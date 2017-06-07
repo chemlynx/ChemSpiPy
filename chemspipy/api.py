@@ -480,10 +480,38 @@ class InchiApi(BaseChemSpider):
         response = self.request('InChI', 'CSIDToMol', csid=csid)
         return response.text
 
-    # TODO
+    def get_csid_from_inchikey(self, inchikey):
+        """Get ChemSpiderID relating to an InChIKey.
+
+        :param string inchi_key: InChIKey.
+        """
+        response = self.request('InChI', 'InChIKeyToCSID', inchi_key=inchikey)
+        return response.text
+
+    def get_mol_from_inchikey(self, inchikey):
+        """Get mol relating to an InChIKey.
+
+        :param string inchi_key: InChIKey.
+        """
+        response = self.request('InChI', 'InChIKeyToMol', inchi_key=inchikey)
+        return response.text
+
+    def get_inchi_from_inchikey(self, inchikey):
+        """Get inchi by look-up of an InChIKey.
+
+        :param string inchi_key: InChIKey.
+        """
+        response = self.request('InChI', 'InChIKeyToInChI', inchi_key=inchikey)
+        return response.text
+
+    # DONE
     # InChIKeyToCSID - inchi_key - csid
-    # InChIKeyToInChI - inchi_key - InChI
     # InChIKeyToMol - inchi_key - Mol
+    # InChIKeyToInChI - inchi_key - InChI
+
+    # TODO
+
+
     # InChIToCSID - inchi - csid
     # InChIToInChIKey - inchi - inchikey
     # InChIToMol - inchi - mol
