@@ -26,6 +26,12 @@ except ImportError:
 
 import six
 
+
+try:
+    import json
+except ImportError:
+    print('json module not loaded')
+
 from .errors import ChemSpiPyServerError, ChemSpiPyTimeoutError
 from .utils import duration
 

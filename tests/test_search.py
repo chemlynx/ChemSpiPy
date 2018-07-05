@@ -25,8 +25,8 @@ logging.basicConfig(level=logging.WARN, format='%(levelname)s:%(name)s:(%(thread
 logging.getLogger('chemspipy').setLevel(logging.DEBUG)
 
 # Security token is retrieved from environment variables
-CHEMSPIDER_SECURITY_TOKEN = os.environ['CHEMSPIDER_SECURITY_TOKEN']
-cs = ChemSpider(security_token=CHEMSPIDER_SECURITY_TOKEN)
+RSC_APIKEY = os.environ['NEW_CHEMSPIDER_SECURITY_TOKEN']
+cs = ChemSpider(apikey=RSC_APIKEY)
 
 
 def test_search_smiles():

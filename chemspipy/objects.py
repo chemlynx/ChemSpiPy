@@ -201,6 +201,7 @@ class Compound(object):
         """
         return self._cs.get_compound_thumbnail(self.csid)
 
+'''
     @memoized_property
     def spectra(self):
         """Return all the available spectral data for this Compound.
@@ -208,6 +209,7 @@ class Compound(object):
         :rtype: list[:class:`~chemspipy.Spectrum`]
         """
         return [Spectrum.from_info_dict(self._cs, info) for info in self._cs.get_spectra_info_list([self.csid])]
+
 
 
 class Spectrum(object):
@@ -320,3 +322,4 @@ class Spectrum(object):
         :rtype: :py:class:`datetime.datetime`
         """
         return timestamp(self._spectrum_info['submitted_date'])
+'''
