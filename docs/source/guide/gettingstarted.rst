@@ -9,7 +9,7 @@ Before we start
 ---------------
 
 - Make sure you have :ref:`installed ChemSpiPy <install>`.
-- :ref:`Obtain a security token <securitytoken>` from the ChemSpider web site.
+- :ref:`Obtain an API key <apikey>` from the ChemSpider web site.
 
 First steps
 -----------
@@ -18,9 +18,9 @@ Start by importing ChemSpider::
 
     >>> from chemspipy import ChemSpider
 
-Then connect to ChemSpider by creating a ``ChemSpider`` instance using your security token::
+Then connect to ChemSpider by creating a ``ChemSpider`` instance using your API key::
 
-    >>> cs = ChemSpider('<YOUR-SECURITY-TOKEN>')
+    >>> cs = ChemSpider('<YOUR-API-KEY>')
 
 All your interaction with the ChemSpider database should now happen through this ChemSpider object, ``cs``.
 

@@ -5,8 +5,6 @@ ChemSpiPy
 
 Python wrapper for the ChemSpider API.
 
-:copyright: Copyright 2014 by Matt Swain.
-:license: MIT, see LICENSE file for more details.
 """
 
 from __future__ import print_function
@@ -22,5 +20,5 @@ __license__ = 'MIT'
 
 from .api import ChemSpider, MOL2D, MOL3D, BOTH, ASCENDING, DESCENDING, CSID, MASS_DEFECT, MOLECULAR_WEIGHT
 from .api import REFERENCE_COUNT, DATASOURCE_COUNT, PUBMED_COUNT, RSC_COUNT
-from .objects import Compound, Spectrum
+from .objects import Compound
 from .search import Results

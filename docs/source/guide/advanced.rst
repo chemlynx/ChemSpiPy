@@ -3,31 +3,30 @@
 Advanced
 ========
 
-Keep your security token secret
--------------------------------
+Keep your API key secret
+------------------------
 
-Be careful not to include your security token when sharing code. A simple way to ensure this doesn't happen by accident
-is to store your security token as an environment variable that can be specified in your `.bash_profile` or `.zshrc`
-file::
+Be careful not to include your API key when sharing code. A simple way to ensure this doesn't happen by accident is to
+store your API key as an environment variable that can be specified in your `.bash_profile` or `.zshrc` file::
 
-    export CHEMSPIDER_SECURITY_TOKEN=<YOUR-SECURITY-TOKEN>
+    export CHEMSPIDER_API_KEY=<YOUR-API-KEY>
 
 This can then be retrieved in your scripts using ``os.environ``::
 
-    >>> CST = os.environ['CHEMSPIDER_SECURITY_TOKEN']
-    >>> cs = ChemSpider(security_token=CST)
+    >>> api_key = os.environ['CHEMSPIDER_API_KEY']
+    >>> cs = ChemSpider(api_key)
 
 Specify a User Agent
 --------------------
 
-As well as using your security token, it is possible to identify your program to the ChemSpider servers using a User
+As well as using your API key, it is possible to identify your program to the ChemSpider servers using a User
 Agent string.
 
 You can specify a custom User Agent through ChemSpiPy through the optional ``user_agent`` parameter to the ChemSpider
 class::
 
     >>> from chemspipy import ChemSpider
-    >>> cs = ChemSpider('<YOUR-SECURITY-TOKEN>', user_agent='My program 1.3, ChemSpiPy 1.0.5, Python 2.7')
+    >>> cs = ChemSpider('<YOUR-API-KEY>', user_agent='My program 1.3, ChemSpiPy 1.0.5, Python 3.6')
 
 Logging
 -------

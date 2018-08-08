@@ -5,8 +5,6 @@ test_compound
 
 Test the Compound object.
 
-:copyright: Copyright 2014 by Matt Swain.
-:license: MIT, see LICENSE file for more details.
 """
 
 from __future__ import print_function
@@ -15,27 +13,32 @@ from __future__ import division
 import logging
 import os
 
+import pytest
 import requests
 
-from chemspipy import ChemSpider, Compound, Spectrum
+from chemspipy import ChemSpider, Compound
 
 
 logging.basicConfig(level=logging.WARN, format='%(levelname)s:%(name)s:(%(threadName)-10s):%(message)s')
 logging.getLogger('chemspipy').setLevel(logging.DEBUG)
 
-# Security token is retrieved from environment variables
-CHEMSPIDER_SECURITY_TOKEN = os.environ['CHEMSPIDER_SECURITY_TOKEN']
-cs = ChemSpider(security_token=CHEMSPIDER_SECURITY_TOKEN)
+# API key is retrieved from environment variables
+CHEMSPIDER_API_KEY = os.environ['CHEMSPIDER_API_KEY']
+cs = ChemSpider(CHEMSPIDER_API_KEY)
 
 
 def test_get_compound():
     """Test getting a compound by ChemSpider ID."""
     compound = cs.get_compound(2157)
     assert isinstance(compound, Compound)
-    assert compound.csid == 2157
+    assert compound.record_id == 2157
+    with pytest.warns(DeprecationWarning):
+        assert compound.csid == 2157
     compound = cs.get_compound('2157')
     assert isinstance(compound, Compound)
-    assert compound.csid == 2157
+    assert compound.record_id == 2157
+    with pytest.warns(DeprecationWarning):
+        assert compound.csid == 2157
 
 
 def test_get_compounds():
@@ -132,13 +135,6 @@ def test_masses():
     assert compound.nominal_mass == 180
 
 
-def test_descriptors():
-    """Test Compound property alogp, xlogp."""
-    compound = cs.get_compound(348191)
-    assert compound.alogp == 0.0
-    assert compound.xlogp == 1.2
-
-
 def test_name():
     """Test Compound property common_name."""
     compound = cs.get_compound(2157)
@@ -150,21 +146,9 @@ def test_molfiles():
     compound = cs.get_compound(2157)
     assert 'V2000' in compound.mol_2d
     assert 'V2000' in compound.mol_3d
-    assert 'V2000' in compound.mol_raw
 
 
 def test_image():
     """Test Compound property image."""
     compound = cs.get_compound(2157)
     assert compound.image[:8] == b'\x89PNG\x0d\x0a\x1a\x0a'  # PNG magic number
-
-
-def test_spectra():
-    """Test Compound property spectra."""
-    compound = cs.get_compound(2157)
-    for s in compound.spectra:
-        assert isinstance(s, Spectrum)
-        assert s.csid == 2157
-        assert isinstance(s.spectrum_id, int)
-    compound = cs.get_compound(263)
-    assert compound.spectra == []

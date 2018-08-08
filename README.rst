@@ -17,7 +17,7 @@ ChemSpiPy provides a way to interact with ChemSpider in Python. It allows chemic
 depiction and retrieval of chemical properties::
 
     >>> from chemspipy import ChemSpider
-    >>> cs = ChemSpider('<YOUR-SECURITY-TOKEN>')
+    >>> cs = ChemSpider('<YOUR-API-KEY>')
     >>> c1 = cs.get_compound(236)  # Specify compound by ChemSpider ID
     >>> c2 = cs.search('benzene')  # Search using name, SMILES, InChI, InChIKey, etc.
 

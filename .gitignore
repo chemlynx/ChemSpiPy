@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.ipynb_checkpoints
+.idea/

@@ -5,8 +5,6 @@ test_search
 
 Test the search wrapper.
 
-:copyright: Copyright 2014 by Matt Swain.
-:license: MIT, see LICENSE file for more details.
 """
 
 from __future__ import print_function
@@ -24,9 +22,9 @@ from chemspipy.errors import ChemSpiPyServerError
 logging.basicConfig(level=logging.WARN, format='%(levelname)s:%(name)s:(%(threadName)-10s):%(message)s')
 logging.getLogger('chemspipy').setLevel(logging.DEBUG)
 
-# Security token is retrieved from environment variables
-CHEMSPIDER_SECURITY_TOKEN = os.environ['CHEMSPIDER_SECURITY_TOKEN']
-cs = ChemSpider(security_token=CHEMSPIDER_SECURITY_TOKEN)
+# API key is retrieved from environment variables
+CHEMSPIDER_API_KEY = os.environ['CHEMSPIDER_API_KEY']
+cs = ChemSpider(CHEMSPIDER_API_KEY)
 
 
 def test_search_smiles():
