@@ -14,24 +14,15 @@ This part of the documentation is automatically generated from the ChemSpiPy sou
 
    .. automethod:: get_compound(csid)
    .. automethod:: get_compounds(csids)
-   .. automethod:: get_spectrum(spectrum_id)
-   .. automethod:: get_spectra(spectrum_ids)
-   .. automethod:: get_compound_spectra(csid)
-   .. automethod:: get_all_spectra()
    .. automethod:: search(query, order=None, direction=ASCENDING, raise_errors=False)
    .. automethod:: simple_search(query)
    .. automethod:: get_record_mol(csid, calc3d=False)
-   .. automethod:: get_original_mol(csid)
    .. automethod:: get_compound_thumbnail(csid)
    .. automethod:: get_databases()
    .. automethod:: get_compound_info(csid)
    .. automethod:: get_extended_compound_info(csid)
    .. automethod:: get_extended_compound_info_list(csids)
    .. automethod:: get_extended_mol_compound_info_list(csids, mol_type=MOL2D, include_reference_counts=False, include_external_references=False)
-   .. automethod:: get_compound_spectra_info(csid)
-   .. automethod:: get_spectrum_info(spectrum_id)
-   .. automethod:: get_spectra_info_list(csids)
-   .. automethod:: get_all_spectra_info()
    .. automethod:: request(api, endpoint, **params)
    .. automethod:: construct_api_url(api, endpoint, **params)
    .. automethod:: async_simple_search(query)
@@ -58,8 +49,6 @@ This part of the documentation is automatically generated from the ChemSpiPy sou
 
 .. automodule:: chemspipy.objects
 .. autoclass:: chemspipy.Compound()
-   :members:
-.. autoclass:: chemspipy.Spectrum()
    :members:
 
 .. automodule:: chemspipy.search

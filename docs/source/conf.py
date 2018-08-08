@@ -43,7 +43,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'ChemSpiPy'
-copyright = u'2014, Matt Swain'
+copyright = u'2018, Matt Swain'
 
 # The version info for the project you're documenting, acts as replacement for |version| and |release|, also used in
 # various other places throughout the built documents.
@@ -244,16 +244,3 @@ autodoc_member_order = 'bysource'
 
 # Concatenate the class and __init__ docstrings together
 autoclass_content = 'both'
-
-
-def process_docstring(app, what, name, obj, options, lines):
-    """Filter out meta fields from module docstrings when used by autodoc."""
-    if not what == 'module':
-        return
-    for l in reversed(lines):
-        if l.startswith(':copyright:') or l.startswith(':license:'):
-            lines.remove(l)
-
-
-def setup(app):
-    app.connect('autodoc-process-docstring', process_docstring)

@@ -5,7 +5,7 @@ python:
   - "3.6"
 env:
   global:
-    - secure: "QQlGoUF2W9DDvdhXhMMfJyA2nSlj8J0QH31b9A1JlbSoIf89H5cjEcYYWqP4WF5sVyBdTm6vbjqQijWSJAjMZkxJduUMYYsHGQZDFuYoyKherS6JbhbJOZH7TmbcepSbBkDf1IJ/JxTMw2yZdXXMO/YmGq6Tc5dmch2XKOGm4f0="
+    - secure: "N/t4txw1k9bOUsLQWQOpzdJpMAdFFzzJqN2rWiijMJPEC9E1meoKMzFYr4kgNjInhVfkud8+3fOHZL/Ns4MLWexf1vsG1NFvrXSBuBD6MlPKYe77bb9WTmRvWfLSDg6F5BP/1uFjwebj4USN14RWlxyIgmsC1+bdCFVN2Wktg4k="
   matrix:
     - OPTIONAL_DEPS=true
     - OPTIONAL_DEPS=false

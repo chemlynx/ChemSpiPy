@@ -7,29 +7,18 @@ ChemSpiPy is a Python wrapper that allows simple access to the web APIs offered 
 interface for users to access and query the ChemSpider database using Python, facilitating programs that can
 automatically carry out the tasks that you might otherwise perform manually via the `ChemSpider website`_.
 
-The ChemSpider website has `full documentation for the ChemSpider APIs`_. It can be useful to browse through this
+The RSC website has `full documentation for the ChemSpider APIs`_. It can be useful to browse through this
 documentation before getting started with ChemSpiPy to get an idea of what sort of features are available.
 
-.. _securitytoken:
+.. _apikey:
 
-Obtaining a security token
---------------------------
+Obtaining an API key
+--------------------
 
-Access to the ChemSpider API is free to academic users. Commercial users should contact the ChemSpider team to obtain
-access.
+The Royal Society of Chemistry web services are currently available as an Open Developer Preview. During the preview you
+can make 1000 calls per month. For an increased allowance, contact `api@rsc.org`_.
 
-Most operations require a "security token" that is issued to you automatically when you `register for a RSC ID`_ and
-then sign in to ChemSpider. Once you have done this, you can find your security token on your
-`ChemSpider User Profile`_.
-
-Some operations require a further "Service Subscriber" role. Contact the ChemSpider team to discuss upgrading your user
-account for access to these features.
-
-.. warning::
-
-   Make sure you copy the entire token from the Chemspider profile page. The text field is quite narrow so you may have
-   to drag across to the right to select the entire token. The token format should be
-   ``xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx``.
+All operations require an API key. To obtain one, `Register for a RSC Developers account`_ and then `Add a new key`_.
 
 ChemSpiPy license
 -----------------
@@ -37,6 +26,7 @@ ChemSpiPy license
 .. include:: ../../../LICENSE
 
 .. _`ChemSpider website`: http://www.chemspider.com
-.. _`full documentation for the ChemSpider APIs`: http://www.chemspider.com/AboutServices.aspx
-.. _`register for a RSC ID`: https://www.rsc.org/rsc-id/sign-in
-.. _`ChemSpider User Profile`: http://www.chemspider.com/UserProfile.aspx
+.. _`full documentation for the ChemSpider APIs`: https://developer.rsc.org/compounds-v1/apis
+.. _`api@rsc.org`: api@rsc.org
+.. _`Register for a RSC Developers account`: https://developer.rsc.org/user/register
+.. _`Add a new key`: https://developer.rsc.org/user/me/apps

@@ -61,7 +61,6 @@ Compound properties
 - ``mol_3d``: MOL file containing 3D coordinates.
 - ``mol_raw``: Unprocessed MOL file.
 - ``image``: 2D depiction as binary data in PNG format.
-- ``spectra``: List of spectra.
 
 Implementation details
 ----------------------
